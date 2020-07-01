@@ -1,0 +1,492 @@
+//清除浮动
+.clearFix(){
+  *zoom:1;
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.wrap {
+  background: #eaeaea;
+  height: 30px;
+
+  .header {
+    width: 1200px;
+    margin: 0px auto;
+    line-height: 30px;
+
+    .top {
+      .clearFix();
+
+      .loginList {
+        p {
+          float: left;
+        }
+      }
+
+      .typeList {
+        float: right;
+        font-size: 0;
+
+        a {
+          font-size: 12px;
+          padding: 0px 10px;
+
+          & + a {
+            border-left: 1px solid #b3aeae;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      width: 1200px;
+      margin: 0px auto;
+      .clearFix;
+
+      .logoArea {
+        float: left;
+
+        img {
+          width: 175px;
+          height: 56px;
+          margin: 25px 45px;
+        }
+      }
+
+      .searchArea {
+        float: right;
+        margin-top: 35px;
+
+        input {
+          box-sizing: border-box;
+          width: 490px;
+          height: 32px;
+          padding: 0px 4px;
+          border: 2px solid #ed4a36;
+          float: left;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          width: 68px;
+          height: 32px;
+          color: #fff;
+          background: #ea4a36;
+          border: none;
+          float: left;
+        }
+      }
+    }
+  }
+
+  .typeNav {
+    border-bottom: 2px solid #e1251b;
+
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      .clearFix();
+
+      h2 {
+        float: left;
+        width: 210px;
+        height: 50px;
+        line-height: 50px;
+        background: #e1251b;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      nav {
+        float: left;
+
+        a {
+          margin: 0 22px;
+          font-size: 16px;
+          color: #333;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+
+  .con {
+    width: 1200px;
+    margin: 15px auto 0;
+
+    .conPoin {
+      padding: 9px 15px 9px 0;
+
+      i {
+        margin: 0 3px;
+        color: #ccc;
+      }
+    }
+
+    .mainCon {
+      margin: 5px 0 15px;
+      .clearFix();
+
+      .previewWrap {
+        float: left;
+        width: 400px;
+
+        .preview {
+          width: 400px;
+          height: 400px;
+          border: 1px solid #dfdfdf;
+          position: relative;
+
+          .zoom {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+
+            .mask {
+              width: 200px;
+              height: 200px;
+              background: rgba(255, 255, 255, 0.5);
+              border: 1px solid #ddd;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+
+          .bigImgBox {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 420px;
+            top: 0;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            background-position:125px  100px;
+            img {
+              width: 800px;
+              height: 800px;
+            }
+          }
+        }
+      }
+
+      .specScroll {
+        width: 400px;
+        margin-top: 5px;
+
+        > a {
+          width: 10px;
+          height: 54px;
+          line-height: 54px;
+          text-align: center;
+          border: 1px solid #ccc;
+          background: #ebebeb;
+          cursor: pointer;
+        }
+
+        .prev {
+          float: left;
+          margin-right: 4px;
+        }
+
+        .next {
+          float: right;
+        }
+
+        .items {
+          //      - 宽高 372px*56px
+          //- 里边图片每一个:
+          //    - 宽高 `50px*50px`
+          //  - 边框`1px solid #CCC`
+          //  - 四周内边距`2px `
+          //  - 右外边距`20px`
+          width: 372px;
+          height: 56px;
+          overflow: hidden;
+          position: relative;
+          float: left;
+
+          .list {
+            width: 1000px;
+            height: 56px;
+            position: absolute;
+            left: 0;
+            transition: 1s ease;
+            li {
+              width: 50px;
+              height: 50px;
+              border: 1px solid #ccc;
+              padding: 2px;
+              margin-right: 20px;
+              float: left;
+              cursor: pointer;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      .infoWrap{
+        width: 700px;
+        float: right;
+        .info1{
+          .infoName{
+            font-size: 16px;
+            font-weight: 700;
+          }
+          .news{
+            margin: 10px 0px 8px 0px;
+            color: red;
+          }
+          .priceArea{
+            background: #fee9ec;
+            padding: 8px 5px 10px 5px;
+            line-height: 28px;
+            .priceArea1{
+
+              .clearFix();
+              .title{
+                width: 50px;
+                margin-right: 10px;
+                float: left;
+              }
+              .price{
+                color: #e12228;
+                vertical-align: bottom;
+                float: left;
+                i{
+                  font-weight: 700;
+                }
+                em{
+                  font-size: 20px;
+                  font-weight: 700;
+                }
+              }
+              .remark{
+                float: right;
+              }
+            }
+            .priceArea2{
+              margin-top: 10px;
+              .clearFix();
+              .title{
+                width: 45px;
+                margin-right: 15px;
+                float: left;
+              }
+              .fixWidth{
+                float: left;
+                width: 520px;
+
+                .red-bg{
+                  background: #e1251b;
+                  padding:3px;
+                  color: white;
+                }
+                .t-gray{
+                  color: #b3aeae;
+                }
+              }
+            }
+          }
+          .support{
+            line-height: 28px;
+            .supportArea{
+              .clearFix();
+              margin-bottom: 10px;
+              margin-top: 10px;
+              .title{
+                width: 45px;
+                margin-right: 15px;
+                float: left;
+              }
+              .fixWidth{
+                color: #b3aeae;
+                float: left;
+              }
+            }
+          }
+        }
+        .choose{
+          border-top:1px solid #eaeaea;
+          .chooseArea{
+            padding: 10px 0px;
+            .choosed{
+              mark{
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                background: snow;
+                border: 1px solid #ddd;
+                padding: 0 20px;
+                margin-right: 20px;
+                a{
+                  color: red;
+                  margin-left: 20px;
+                  text-decoration: none;
+                  cursor: pointer;
+                }
+              }
+            }
+            dl{
+              .clearFix();
+              margin: 13px 0;
+
+              dt{
+                width: 48px;
+                line-height: 28px;
+                margin-right: 15px;
+                float: left;
+              }
+              dd{
+                float: left;
+                margin-right: 5px;
+                color: #666;
+                line-height: 24px;
+                padding: 2px 14px;
+                cursor: pointer;
+                border-top: 1px solid #eee;
+                border-left: 1px solid #eee;
+                border-right: 1px solid #bbb;
+                border-bottom: 1px solid #bbb;
+                &:nth-of-type(1){
+                  color: red;
+                }
+              }
+
+            }
+          }
+        }
+        .cartWrap{
+          .controls{
+            margin-right: 10px;
+            width: 56px;
+            position: relative;
+            float: left;
+            input{
+              width: 38px;
+              height: 37px;
+              line-height: 30px;
+              border: 1px solid #ddd;
+              text-align: center;
+            }
+            a{
+              position: absolute;
+              width: 15px;
+              height: 18px;
+              background-color: #f1f1f1;
+              color: #666;
+              line-height: 17px;
+              text-align: center;
+              right: 0px;
+              border: 1px solid #ccc;
+            }
+            .plus{
+              top: 0;
+            }
+            .mins{
+              top: 19px;
+            }
+          }
+          .add{
+            padding: 0 25px;
+            height: 39px;
+            font-size: 16px;
+            background: #e1251b;
+            color: #fff;
+            text-align: center;
+            line-height: 39px;
+            float: left;
+            a{
+              color: white;
+            }
+            a:hover{
+              color: white !important;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .toolbar{
+    width: 300px;
+    background: peru;
+    height: 100%;
+    position: fixed;
+    right: -294px;
+    top: 0;
+    transition:0.5s ease;
+    .content{
+      width: 294px;
+      background: palegoldenrod;
+      height: 100%;
+      float: right;
+      position: relative;
+      z-index: 7;
+    }
+    .btn{
+      width: 50px;
+      height: 50px;
+      background: peru url("../img/list.png") no-repeat center center;
+      background-size: 70%;
+      position: absolute;
+      top:0;
+      right: 294px;
+      cursor: pointer;
+    }
+    .toolist{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: peru;
+      li{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        position: relative;
+        left: -40px;
+        & + li{
+          margin-bottom: 1px;
+        }
+        em{
+          display: inline-block;
+          width: 46px;
+          height: 40px;
+          background:peru url("../img/toolbars.png") no-repeat;
+          background-position: -83px -172px;
+          cursor: pointer;
+          position: relative;
+          z-index: 5;
+        }
+        i{
+          width: 80px;
+          line-height: 40px;
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 40px;
+          background:peru;
+          z-index: 4;
+          transition: 0.5s ease;
+          color: white;
+        }
+      }
+    }
+  }
+}

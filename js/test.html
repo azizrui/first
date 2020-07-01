@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Foo() {
+            getName = function () { console.log(1) };
+            return this;
+        }
+        Foo.getName = function () { console.log(2)};
+        Foo.prototype.getName = function () { console.log(3)};
+        var getName = function () { console.log(4)};
+        function getName() { console.log(5)}
+        //请写出以下输出结果：
+
+        //这是全局的getName()方法，上面全局的getName()方法有 1，4，5
+        // 其中1因为函数未调用，所以不执行，4，5函数同名，同名函数函数定义比字面量定义时先执行，所以5先执行，4后执行覆盖5的结果
+        getName();  // 4
+
+        //先执行Foo函数，返回this，此时的this指的是window，调用window的getName()方法
+        //全局的getName()方法有 1，4，5，但是在Foo调用之前，4，5，已经执行，所以Foo()调用时 1会覆盖4，5，
+        Foo().getName();  // 1
+
+        // Foo对象的方法
+        new Foo.getName(); // 2
+
+        //Foo构造函数的方法，由于他本身没有，去原型上找
+        new Foo().getName(); // 3
+
+        //和上一个一样，都是 实例
+        new new Foo().getName(); // 3
+
+        //Foo对象的getName()方法
+        Foo.getName(); // 2
+
+
+        getName(); // 1
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*function fn(){
+            var a = 0;
+            function fn1(){
+                a++;
+                console.log(a);
+            }
+            return fn1;
+        }
+        // var f = fn();
+        // f();
+        // f();
+        fn()();
+        fn()();
+        fn()();*/
+
+        function fun(n,o){
+            console.log(o);
+            return{
+                fun:function(m){
+                    return fun(m,n)
+                }
+            }
+        }
+        var a = fun(0);
+        // a.fun(1);
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
